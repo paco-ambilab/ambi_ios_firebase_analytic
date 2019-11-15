@@ -1,0 +1,6 @@
+framework module Pods_ambi_ios_firebase_analyticTests {
+  umbrella header "Pods-ambi_ios_firebase_analyticTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
