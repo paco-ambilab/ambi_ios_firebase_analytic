@@ -8,14 +8,21 @@
 
 import UIKit
 import PhraseApp
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         PhraseApp.shared.setup(distributionID: "96caf4d1da04e4d33a5a773319a0a452", environmentToken: "liILL1ADJJS6i9NU4wpJIK5I9BxdNlce2g0ktM84HZ4")
         try! PhraseApp.shared.updateTranslations()
+        
+        FirebaseApp.configure()
+        Analytics.setAnalyticsCollectionEnabled(true)
+        Analytics.setUserID("123456")
         return true
     }
 

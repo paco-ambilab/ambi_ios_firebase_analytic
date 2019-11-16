@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import PhraseApp
 
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -18,6 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+//        PhraseApp.shared.setup(distributionID: "96caf4d1da04e4d33a5a773319a0a452", environmentToken: "liILL1ADJJS6i9NU4wpJIK5I9BxdNlce2g0ktM84HZ4")
+//        try! PhraseApp.shared.updateTranslations()
+//        window?.rootViewController = ViewController()
+//        window?.makeKeyAndVisible()
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

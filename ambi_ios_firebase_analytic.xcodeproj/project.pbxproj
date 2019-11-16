@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0030DAE1237F085B00A968BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0030DAE0237F085B00A968BD /* GoogleService-Info.plist */; };
+		0030DAE5237F0E3600A968BD /* UITextFieldEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0030DAE3237F0E3600A968BD /* UITextFieldEx.swift */; };
+		0030DAE6237F0E3600A968BD /* UIButtonEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0030DAE4237F0E3600A968BD /* UIButtonEx.swift */; };
 		00F535B2237DA226009DD752 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F535B1237DA226009DD752 /* AppDelegate.swift */; };
 		00F535B4237DA226009DD752 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F535B3237DA226009DD752 /* SceneDelegate.swift */; };
 		00F535B6237DA226009DD752 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F535B5237DA226009DD752 /* ViewController.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0030DAE0237F085B00A968BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0030DAE3237F0E3600A968BD /* UITextFieldEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldEx.swift; sourceTree = "<group>"; };
+		0030DAE4237F0E3600A968BD /* UIButtonEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonEx.swift; sourceTree = "<group>"; };
 		00F535AE237DA226009DD752 /* ambi_ios_firebase_analytic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ambi_ios_firebase_analytic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F535B1237DA226009DD752 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00F535B3237DA226009DD752 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,9 +90,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0030DAE2237F0E3600A968BD /* ViewExtension */ = {
+			isa = PBXGroup;
+			children = (
+				0030DAE3237F0E3600A968BD /* UITextFieldEx.swift */,
+				0030DAE4237F0E3600A968BD /* UIButtonEx.swift */,
+			);
+			path = ViewExtension;
+			sourceTree = "<group>";
+		};
 		00F535A5237DA226009DD752 = {
 			isa = PBXGroup;
 			children = (
+				0030DAE2237F0E3600A968BD /* ViewExtension */,
 				00F535B0237DA226009DD752 /* ambi_ios_firebase_analytic */,
 				00F535C7237DA228009DD752 /* ambi_ios_firebase_analyticTests */,
 				00F535AF237DA226009DD752 /* Products */,
@@ -107,6 +123,7 @@
 		00F535B0237DA226009DD752 /* ambi_ios_firebase_analytic */ = {
 			isa = PBXGroup;
 			children = (
+				0030DAE0237F085B00A968BD /* GoogleService-Info.plist */,
 				00F535B1237DA226009DD752 /* AppDelegate.swift */,
 				00F535B3237DA226009DD752 /* SceneDelegate.swift */,
 				00F535B5237DA226009DD752 /* ViewController.swift */,
@@ -240,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00F535BE237DA228009DD752 /* LaunchScreen.storyboard in Resources */,
+				0030DAE1237F085B00A968BD /* GoogleService-Info.plist in Resources */,
 				00F535BB237DA228009DD752 /* Assets.xcassets in Resources */,
 				00F535B9237DA226009DD752 /* Main.storyboard in Resources */,
 			);
@@ -329,6 +347,8 @@
 				00F535E2237DA3D0009DD752 /* DeviceDetailSettingViewController.swift in Sources */,
 				00F535D8237DA2BB009DD752 /* AddDeviceViewController.swift in Sources */,
 				00F535DE237DA331009DD752 /* ForgetPasswordViewController.swift in Sources */,
+				0030DAE5237F0E3600A968BD /* UITextFieldEx.swift in Sources */,
+				0030DAE6237F0E3600A968BD /* UIButtonEx.swift in Sources */,
 				00F535E0237DA35C009DD752 /* RegisterAccountViewController.swift in Sources */,
 				00F535D4237DA266009DD752 /* LoginViewController.swift in Sources */,
 				00F535D6237DA2A4009DD752 /* PreferenceSettingViewController.swift in Sources */,

@@ -5,6 +5,7 @@ target 'ambi_ios_firebase_analytic' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'PhraseApp'
+  pod 'Firebase/Analytics'
   # Pods for ambi_ios_firebase_analytic
 
   target 'ambi_ios_firebase_analyticTests' do
