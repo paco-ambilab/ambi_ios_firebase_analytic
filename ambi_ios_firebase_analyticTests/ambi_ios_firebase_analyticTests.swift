@@ -28,7 +28,7 @@ class ambi_ios_firebase_analyticTests: XCTestCase {
         // when
         loginViewController.setTestVariable("123")
         // then
-        XCTAssertEqual(loginViewController.testVariable, value)
+        XCTAssertEqual(loginViewController.testVariable, "321")
     }
     
     func testExample() {
