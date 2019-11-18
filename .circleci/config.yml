@@ -47,6 +47,10 @@ jobs:
       # Artifacts backup
 #      - store_artifacts:
 #          path: ~/project/
+      - run:
+          name: Create Directory
+          command: |
+            mkdir -p ~/project/scan
       - store_test_results:
           path: ~/project/scan
 
