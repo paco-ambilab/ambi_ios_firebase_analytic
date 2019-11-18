@@ -16,13 +16,13 @@ jobs:
           command: |
             mkdir -p ~/project/
       - checkout
-#      - restore_cache:
-#          key: 1-gems-{{ checksum "Gemfile.lock" }}
-#      - run: bundle check || bundle install --path vendor/bundle
-#      - save_cache:
-#          key: 1-gems-{{ checksum "Gemfile.lock" }}
-#          paths:
-#            - vendor/bundle
+      - restore_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+      - run: bundle check || bundle install --path vendor/bundle
+      - save_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
        # Fetch CocoaPods Source
 #      - run:
 #          name: Fetch CocoaPods Specs
@@ -30,7 +30,9 @@ jobs:
 #            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
       # Install CocoaPods
       - restore_cache:
-          key: 1-pods-{{ checksum "Podfile.lock" }}
+          keys:
+            - 1-pods-{{ checksum "Podfile.lock" }}
+            - 1-pods
       - run:
           name: Install CocoaPods
           command: pod install #--verbose
@@ -42,9 +44,9 @@ jobs:
       - run:
           name: Fastlane - build and run tests
           command: fastlane $FASTLANE_LANE
-      # Artifacts backup
-#      - store_artifacts:
-#          path: ~/project/
+       Artifacts backup
+      - store_artifacts:
+          path: ~/project/
       - store_test_results:
           path: ~/project/scan
 
