@@ -7,16 +7,14 @@ jobs:
   build-and-test:
     macos:
       xcode: "11.2.0"
-      working_directory: /Users/distiller/project
     environment:
-      FL_OUTPUT_DIR: output
       FASTLANE_LANE: scan #custom_lane
     shell: /bin/bash --login -o pipefail
     steps:
       - run:
           name: Create Directory
           command: |
-            mkdir $FL_OUTPUT_DIR
+            mkdir -p ~/project/
       - checkout
       - restore_cache:
           key: 1-gems-{{ checksum "Gemfile.lock" }}
@@ -38,9 +36,9 @@ jobs:
           name: Fastlane - build and run tests
           command: fastlane $FASTLANE_LANE
       - store_artifacts:
-          path: output
+          path: ~/project/
       - store_test_results:
-          path: output/scan
+          path: ~/project/scan
 
 workflows:
   version: 2
