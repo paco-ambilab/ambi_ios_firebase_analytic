@@ -15,7 +15,8 @@ jobs:
     steps:
       - run:
           name: Create Directory
-          command: | mkdir $FL_OUTPUT_DIR
+          command: |
+            mkdir $FL_OUTPUT_DIR
       - checkout
       - restore_cache:
           key: 1-gems-{{ checksum "Gemfile.lock" }}
