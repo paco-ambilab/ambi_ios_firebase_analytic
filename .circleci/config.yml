@@ -16,13 +16,14 @@ jobs:
           command: |
             mkdir -p ~/project/
       - checkout
-      - restore_cache:
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
-      - run: bundle check || bundle install --path vendor/bundle
-      - save_cache:
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
+#      - restore_cache:
+#          key: 1-gems-{{ checksum "Gemfile.lock" }}
+#      - run: bundle check || bundle install --path vendor/bundle
+#      - save_cache:
+#          key: 1-gems-{{ checksum "Gemfile.lock" }}
+#          paths:
+#            - vendor/bundle
+       # Fetch CocoaPods Source
 #      - run:
 #          name: Fetch CocoaPods Specs
 #          command: |
