@@ -42,6 +42,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "00F535C3237DA228009DD752"
+               BuildableName = "ambi_ios_firebase_analyticTests.xctest"
+               BlueprintName = "ambi_ios_firebase_analyticTests"
+               ReferencedContainer = "container:ambi_ios_firebase_analytic.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
