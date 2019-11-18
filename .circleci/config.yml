@@ -13,6 +13,9 @@ jobs:
       FASTLANE_LANE: scan #custom_lane
     shell: /bin/bash --login -o pipefail
     steps:
+      - run:
+          name: Create Directory
+          command: | mkdir $FL_OUTPUT_DIR
       - checkout
       - restore_cache:
           key: 1-gems-{{ checksum "Gemfile.lock" }}
