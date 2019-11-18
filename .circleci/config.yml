@@ -13,22 +13,18 @@ jobs:
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
-      - run:
-          name: Fetch CocoaPods Specs
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+#      - run:
+#          name: Fetch CocoaPods Specs
+#          command: |
+#            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
       # Install CocoaPods
       - run:
           name: Install CocoaPods
-          command: pod install --verbose
+          command: pod install #--verbose
       # Fastlane
       - run:
           name: Fastlane - build and run tests
           command: fastlane $FASTLANE_LANE
-      - store_artifacts:
-          path: output
-      - store_test_results:
-          path: output/scan
 
 workflows:
   version: 2
