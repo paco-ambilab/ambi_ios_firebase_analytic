@@ -7,12 +7,20 @@ jobs:
   build-and-test:
     macos:
       xcode: "11.2.0"
+      working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: scan #custom_lane
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
+      - restore_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+      - run: bundle check || bundle install --path vendor/bundle
+      - save_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
 #      - run:
 #          name: Fetch CocoaPods Specs
 #          command: |
@@ -25,6 +33,10 @@ jobs:
       - run:
           name: Fastlane - build and run tests
           command: fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: output
+      - store_test_results:
+          path: output/scan
 
 workflows:
   version: 2
