@@ -11,14 +11,26 @@ import XCTest
 
 class ambi_ios_firebase_analyticTests: XCTestCase {
 
+    var loginViewController: LoginViewController!
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        loginViewController = LoginViewController()
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        loginViewController = nil
     }
 
+    func testLoginViewController() {
+        let value = "123"
+        // when
+        loginViewController.setTestVariable("123")
+        // then
+        XCTAssertEqual(loginViewController.testVariable, "321")
+    }
+    
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

@@ -11,9 +11,15 @@ import Firebase
 
 class LoginViewController: UIViewController {
     
+    public var testVariable: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    public func setTestVariable(_ testVariable: String) {
+        self.testVariable = testVariable
     }
     
 }
