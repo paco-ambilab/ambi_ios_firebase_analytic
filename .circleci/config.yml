@@ -45,10 +45,10 @@ jobs:
           name: Fastlane - build and run tests
           command: fastlane $FASTLANE_LANE
       # Artifacts backup
-      - store_artifacts:
-          path: ~/project/
-      - store_test_results:
-          path: ~/project/scan
+#      - store_artifacts:
+#          path: ~/project/
+#      - store_test_results:
+#          path: ~/project/scan
 
 workflows:
   version: 2
