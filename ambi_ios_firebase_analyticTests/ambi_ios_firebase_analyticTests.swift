@@ -29,6 +29,28 @@ class ambi_ios_firebase_analyticTests: XCTestCase {
         loginViewController.setTestVariable("123")
         // then
         XCTAssertEqual(loginViewController.testVariable, value)
+        
+        XCTAssertThrowsError(try FileManager.default.copyItem(at: nil!, to: nil!)) { (error) in
+            
+        }
+        
+        let expectation = XCTestExpectation(description: "Asynchronous")
+        DispatchQueue.main.async {
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 20)
+        
+        let expectation1 = XCTestExpectation(description: "Asynchronous.expectedFulfillmentCount")
+        expectation1.expectedFulfillmentCount = 2
+        DispatchQueue.main.async {
+            expectation1.fulfill()
+            expectation1.fulfill()
+        }
+        
+        wait(for: [expectation1], timeout: 10)
+        
+        testExample()
     }
     
     func testExample() {
@@ -39,7 +61,7 @@ class ambi_ios_firebase_analyticTests: XCTestCase {
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
-            // Put the code you want to measure the time of here.
+            testLoginViewController()
         }
     }
 
